@@ -1,0 +1,215 @@
+.system-container {
+  max-width: 420px;
+  margin: auto;
+  padding: clamp(14px, 3vw, 16px);
+  color: #f1f5f9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.system-title {
+  font-size: clamp(1.5rem, 5.5vw, 1.6rem);
+  font-weight: bold;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #facc15, #fde047);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.system-subtitle {
+  font-size: clamp(0.8rem, 2.5vw, 0.85rem);
+  opacity: 0.6;
+  margin-bottom: 22px;
+}
+
+.sys-loading {
+  padding: 16px;
+  text-align: center;
+}
+
+/* ROW */
+.system-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: clamp(14px, 3vw, 16px);
+  margin-bottom: clamp(14px, 3vw, 16px);
+}
+
+.row-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 12px);
+}
+
+.row-icon {
+  width: clamp(38px, 8vw, 40px);
+  height: clamp(38px, 8vw, 40px);
+  background: #1f2937;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(16px, 4vw, 18px);
+  flex-shrink: 0;
+}
+
+.row-label {
+  font-size: clamp(14px, 4vw, 15px);
+  font-weight: 600;
+}
+
+/* RIGHT */
+.row-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 10px);
+  flex-shrink: 0;
+}
+
+.status-pill {
+  font-size: clamp(11px, 2.5vw, 12px);
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 12px;
+}
+
+.status-pill.on {
+  color: #22c55e;
+  border: 1px solid #22c55e;
+}
+
+.status-pill.off {
+  color: #9ca3af;
+  border: 1px solid #555;
+}
+
+/* SWITCH */
+.switch {
+  width: clamp(44px, 8vw, 46px);
+  height: clamp(22px, 4vw, 24px);
+  background: #555;
+  border-radius: 20px;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.switch.active {
+  background: #22c55e;
+}
+
+.switch-thumb {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  display: block;
+  transition: 0.3s;
+}
+
+.switch.active .switch-thumb {
+  transform: translateX(22px);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .system-container {
+    padding: 14px;
+  }
+
+  .row-label {
+    font-size: 15px;
+  }
+}
+
+/* ================= MOBILE RESPONSIVE IMPROVEMENTS (max-width: 768px) ================= */
+@media (max-width: 768px) {
+  .system-container {
+    padding: 20px 16px !important; /* Increased padding */
+    max-width: 100%;
+  }
+
+  .system-title {
+    font-size: 1.75rem !important; /* Increased size */
+    margin-bottom: 10px;
+  }
+
+  .system-subtitle {
+    font-size: 0.95rem !important; /* Larger subtitle */
+    margin-bottom: 28px; /* More spacing */
+  }
+
+  .system-row {
+    padding: 20px 18px !important; /* Increased padding */
+    margin-bottom: 20px !important; /* More spacing between rows */
+    border-radius: 16px;
+    border-width: 1.5px;
+  }
+
+  .row-left {
+    gap: 16px !important; /* More gap between icon and label */
+  }
+
+  .row-icon {
+    width: 48px !important; /* Larger icons */
+    height: 48px !important;
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 12px;
+    font-size: 22px !important; /* Larger emoji/icons */
+  }
+
+  .row-label {
+    font-size: 17px !important; /* Larger text */
+    font-weight: 600;
+  }
+
+  .row-right {
+    gap: 14px !important; /* More gap between status and switch */
+  }
+
+  .status-pill {
+    font-size: 13px !important; /* Larger text */
+    padding: 8px 14px !important; /* More padding */
+    border-radius: 14px;
+    border-width: 1.5px;
+  }
+
+  .switch {
+    width: 60px !important; /* Larger switch for better touch */
+    height: 32px !important;
+    min-width: 60px !important;
+    min-height: 32px !important;
+    border-radius: 28px !important;
+    padding: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important; /* Enhanced depth */
+  }
+
+  .switch.active {
+    box-shadow: 0 2px 12px rgba(34, 197, 94, 0.5) !important; /* Green glow when active */
+  }
+
+  .switch-thumb {
+    width: 24px !important; /* Larger thumb for better visibility */
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important; /* Thumb shadow */
+  }
+
+  .switch.active .switch-thumb {
+    transform: translateX(28px) !important; /* Adjusted for larger switch */
+  }
+
+  .sys-loading {
+    padding: 24px;
+    font-size: 17px;
+  }
+}

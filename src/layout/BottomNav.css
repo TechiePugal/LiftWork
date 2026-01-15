@@ -1,0 +1,89 @@
+/* ================= BOTTOM NAV ROOT ================= */
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: env(safe-area-inset-bottom, 12px);
+  transform: translateX(-50%);
+
+  width: min(96%, 420px);
+  height: 74px; /* default */
+
+  background-color: #f6e6bb;
+  border: 4px solid #e88400;
+  border-radius: 36px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+}
+
+/* ================= NAV BUTTON ================= */
+.nav-btn {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+
+  background-color: #e88400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-btn:active {
+  transform: scale(0.94);
+}
+
+/* ================= ACTIVE STATE ================= */
+.nav-btn.active {
+  background-color: #004262;
+  box-shadow: 0 0 14px rgba(0, 66, 98, 0.85);
+}
+
+/* ================= ICON ================= */
+.nav-icon {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+/* ================================================= */
+/* ========== MOBILE (SMALL & BALANCED BOOST) ====== */
+/* ================================================= */
+
+@media (max-width: 480px) {
+  .bottom-nav {
+    height: 80px;          /* was 74px → small increase */
+    border-radius: 38px;
+  }
+
+  .nav-btn {
+    width: 62px;          /* was 58px */
+    height: 62px;
+  }
+
+  .nav-icon {
+    font-size: 34px;      /* was 32px */
+  }
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 768px) {
+  .bottom-nav {
+    width: 420px;
+  }
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width: 1024px) {
+  .bottom-nav {
+    width: 380px;
+    height: 72px;
+  }
+}

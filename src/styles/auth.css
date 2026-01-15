@@ -1,0 +1,193 @@
+/* ===== GLOBAL RESET (SAFE) ===== */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #e5e7eb;
+}
+
+/* ===== AUTH LAYOUT ===== */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: #111;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== HEADERS ===== */
+.auth-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* ===== FORM ===== */
+.auth-field {
+  margin-bottom: 18px;
+}
+
+.auth-label {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #1c1c1c;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.auth-input::placeholder {
+  color: #6b7280;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* ===== PASSWORD TOGGLE ===== */
+.password-wrap {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+/* ===== ERROR ===== */
+.auth-error {
+  font-size: 12px;
+  color: #f87171;
+  margin-top: 4px;
+}
+
+/* ===== BUTTON ===== */
+.auth-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background: #1d4ed8;
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== FOOTER ===== */
+.auth-footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .auth-card {
+    margin: 0 14px;
+  }
+}
+
+/* ================= MOBILE RESPONSIVE IMPROVEMENTS (max-width: 768px) ================= */
+@media (max-width: 768px) {
+  .auth-page {
+    padding: 24px 16px;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    padding: 32px 24px !important; /* Increased padding */
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  .auth-title {
+    font-size: 24px !important; /* Larger title */
+    margin-bottom: 28px;
+  }
+
+  .auth-field {
+    margin-bottom: 24px !important; /* More spacing */
+  }
+
+  .auth-label {
+    font-size: 15px !important; /* Larger labels */
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .auth-input {
+    padding: 16px 18px !important; /* Increased padding */
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    border-radius: 10px;
+    min-height: 48px; /* Minimum touch target */
+    border-width: 1.5px;
+  }
+
+  .password-toggle {
+    right: 18px;
+    top: 42px;
+    font-size: 22px !important; /* Larger icon */
+    min-width: 32px;
+    min-height: 32px;
+    display: flex;
+    align-items: "center";
+    justify-content: "center";
+  }
+
+  .auth-button {
+    padding: 16px 24px !important; /* Increased padding */
+    font-size: 16px !important; /* Larger text */
+    border-radius: 10px;
+    min-height: 48px; /* Minimum touch target */
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  .auth-error {
+    font-size: 14px !important; /* Larger error text */
+    margin-top: 6px;
+  }
+
+  .auth-footer {
+    margin-top: 24px;
+    font-size: 14px !important; /* Larger footer text */
+  }
+}

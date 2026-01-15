@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ================= GLOBAL RESET ================= */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ================= GLOBAL UI SCALE ================= */
+:root {
+  /* 🔥 CHANGE ONLY THIS VALUE */
+  --global-ui-scale: 1.2; /* 1 = normal | 1.15 = medium | 1.3 = large */
+}
+
+/* ================= ROOT SCALING ================= */
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.5;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ================= MEDIA FIX ================= */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= MOBILE RESPONSIVE IMPROVEMENTS (max-width: 768px) ================= */
+@media (max-width: 768px) {
+  /* Increase base font size for mobile only */
+  html {
+    font-size: 19px; /* Slightly larger base for small screens */
+  }
+
+  body {
+    font-size: 17px; /* Base body text */
+    line-height: 1.6;
+  }
+
+  /* Global heading sizes */
+  h1 {
+    font-size: 1.9rem !important; /* ~30px */
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.6rem !important; /* ~26px */
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.35rem !important; /* ~22px */
+    line-height: 1.4;
+  }
+
+  /* Global button improvements */
+  button {
+    min-height: 52px !important; /* Increased touch target (44px+) */
+    min-width: 52px !important; /* Ensure minimum width for square buttons */
+    padding: 14px 28px !important; /* Increased horizontal padding */
+    font-size: 17px !important; /* Slightly larger text */
+    font-weight: 600;
+    border-radius: 12px !important; /* More modern rounded corners */
+    transition: all 0.2s ease !important; /* Smooth interactions */
+  }
+
+  /* Button active/press state for better feedback */
+  button:active {
+    transform: scale(0.96) !important;
+    opacity: 0.9;
+  }
+
+  /* Button spacing improvements */
+  button + button {
+    margin-left: 12px; /* Better spacing between buttons */
+  }
+
+  /* Global input improvements */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    min-height: 48px !important; /* Minimum touch target */
+    padding: 14px 18px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    border-radius: 8px;
+  }
+
+  /* Global label improvements */
+  label {
+    font-size: 15px !important;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  /* Global card improvements */
+  .card,
+  [class*="card"],
+  [class*="Card"] {
+    padding: 24px !important;
+    margin-bottom: 20px;
+    border-radius: 16px;
+  }
+
+  /* Global icon improvements */
+  svg,
+  [class*="icon"],
+  [class*="Icon"] {
+    min-width: 28px !important; /* Larger icons for better visibility */
+    min-height: 28px !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Icons inside buttons should be even larger */
+  button svg,
+  button [class*="icon"],
+  button [class*="Icon"] {
+    min-width: 24px !important;
+    min-height: 24px !important;
+    font-size: 24px !important; /* Larger icon font size */
+  }
+
+  /* Ensure all interactive elements meet touch target size */
+  a,
+  button,
+  [role="button"],
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-width: 48px !important; /* Increased from 44px for better touch targets */
+    min-height: 48px !important;
+  }
+
+  /* Links styled as buttons */
+  a[class*="btn"],
+  a[class*="button"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 14px 28px !important;
+    min-height: 52px !important;
+    font-size: 17px !important;
+  }
+
+  /* Improve spacing for mobile */
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  /* Better spacing for lists */
+  ul,
+  ol {
+    padding-left: 24px;
+    font-size: 15px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,172 @@
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: clamp(16px, 2vw, 18px);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+/* ================= ROOT ================= */
+.app-layout {
+  min-height: 100dvh;
+  background: radial-gradient(circle at top, #0f0f0f, #000);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+.app-header {
+  position: sticky;
+  top: env(safe-area-inset-top);
+  z-index: 100;
+
+  height: clamp(3.8rem, 12vw, 4.2rem);
+  padding: 0 clamp(0.5rem, 3vw, 1rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(250, 204, 21, 0.25);
+}
+
+/* ================= TITLE ================= */
+.app-title {
+  flex: 1;
+  text-align: center;
+  font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #facc15;
+}
+
+/* ================= ICON BUTTON ================= */
+.icon-btn {
+  width: clamp(46px, 4.5vw, 56px);
+  height: clamp(46px, 4.5vw, 56px);
+  border-radius: 14px;
+
+  border: 1.5px solid rgba(250, 204, 21, 0.5);
+  background: linear-gradient(145deg, #111, #000);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 0 10px rgba(250, 204, 21, 0.45),
+    inset 0 0 6px rgba(250, 204, 21, 0.35);
+
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.icon-btn:active {
+  transform: scale(0.94);
+}
+
+.icon-btn svg {
+  width: clamp(22px, 2.5vw, 28px);
+  height: clamp(22px, 2.5vw, 28px);
+}
+
+/* ================= MOBILE RESPONSIVE IMPROVEMENTS ================= */
+@media (max-width: 768px) {
+  .app-header {
+    height: 64px; /* Increased from clamp for better mobile visibility */
+    padding: 0 16px; /* Increased padding */
+  }
+
+  .app-title {
+    font-size: 1.4rem !important; /* Increased from clamp */
+    letter-spacing: 2px;
+  }
+
+  .icon-btn {
+    width: 60px !important; /* Larger for better touch targets */
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    border-radius: 18px !important; /* More rounded */
+    border-width: 2.5px !important; /* Thicker border */
+    padding: 0 !important; /* Ensure no extra padding */
+    box-shadow: 
+      0 0 12px rgba(250, 204, 21, 0.5) !important,
+      inset 0 0 8px rgba(250, 204, 21, 0.4) !important; /* Enhanced glow */
+  }
+
+  .icon-btn:active {
+    transform: scale(0.92) !important; /* Better press feedback */
+  }
+
+  .icon-btn svg {
+    width: 30px !important; /* Larger icons */
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+  }
+
+  .header-actions {
+    gap: 12px; /* Increased gap between buttons */
+  }
+
+  .app-content {
+    padding: 24px 20px !important; /* Increased padding */
+    padding-bottom: 160px; /* More space for bottom nav */
+  }
+}
+
+/* ================= HEADER RIGHT ================= */
+.header-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ================= CONTENT ================= */
+.app-content {
+  flex: 1;
+  padding: clamp(18px, 4vw, 28px);
+  padding-bottom: 140px;
+
+  overflow-y: auto;
+
+  background-image: url("../icon/CELOGO.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(80vw, 320px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.app-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.85)
+  );
+  z-index: 0;
+}
+
+.app-content > * {
+  position: relative;
+  z-index: 1;
+}
+

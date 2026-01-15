@@ -1,0 +1,194 @@
+/* PAGE */
+.lift-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90vh;
+  padding: clamp(14px, 3vw, 16px);
+  font-family: "Segoe UI", sans-serif;
+  color: #f1f5f9;
+}
+
+/* TITLE */
+.title {
+  font-size: clamp(1.5rem, 5.5vw, 1.8rem);
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #facc15, #fde047);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FLOORS */
+.floor-list {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 4vw, 18px);
+}
+
+.floor-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BUTTONS */
+.circle-btn {
+  width: clamp(70px, 18vw, 72px);
+  height: clamp(70px, 18vw, 72px);
+  border-radius: 50%;
+  border: 1px solid #6b7280;
+  background: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.circle-btn img {
+  width: 70%;
+  height: 70%;
+}
+
+.circle-btn:hover {
+  box-shadow: 0 4px 14px rgba(156, 163, 175, 0.5);
+}
+
+.floor-btn.active {
+  background: #facc15;
+  border-color: #f59e0b;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.9);
+}
+
+.door-btn {
+  background: #1f2937;
+}
+
+/* STATUS PANEL */
+.status-panel {
+  margin-top: 28px;
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border-radius: 22px;
+  padding: clamp(20px, 5vw, 22px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 18px);
+}
+
+.status-item {
+  display: flex;
+  gap: clamp(14px, 3vw, 16px);
+}
+
+.status-label {
+  flex: 1;
+  background: #facc15;
+  color: #000;
+  text-align: center;
+  padding: clamp(10px, 2vw, 12px);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: clamp(13px, 3vw, 15px);
+}
+
+.status-value {
+  flex: 1;
+  background: #0f172a;
+  color: #fff;
+  text-align: center;
+  padding: clamp(10px, 2vw, 12px);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: clamp(13px, 3vw, 15px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .circle-btn {
+    width: 64px;
+    height: 64px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ================= MOBILE RESPONSIVE IMPROVEMENTS (max-width: 768px) ================= */
+@media (max-width: 768px) {
+  .lift-container {
+    padding: 20px 16px !important; /* Increased padding */
+  }
+
+  .title {
+    font-size: 1.75rem !important; /* Increased from 1.6rem */
+    margin-bottom: 28px; /* More spacing */
+  }
+
+  .floor-list {
+    gap: 20px !important; /* Increased gap between floor rows */
+    max-width: 100%;
+  }
+
+  .floor-row {
+    gap: 16px; /* Space between buttons */
+  }
+
+  .circle-btn {
+    width: 88px !important; /* Larger for premium feel and better touch */
+    height: 88px !important;
+    min-width: 88px !important;
+    min-height: 88px !important;
+    border-width: 3px !important; /* Thicker border */
+    border-radius: 50% !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important; /* Enhanced depth */
+    transition: all 0.2s ease !important;
+  }
+
+  .circle-btn:active {
+    transform: scale(0.92) !important; /* Better press feedback */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .floor-btn.active {
+    box-shadow: 0 0 28px rgba(250, 204, 21, 1) !important; /* Enhanced active glow */
+    transform: scale(1.05) !important; /* Slight scale up for active */
+  }
+
+  .circle-btn img {
+    width: 78% !important; /* Larger images for better visibility */
+    height: 78% !important;
+  }
+
+  .status-panel {
+    margin-top: 32px !important; /* More spacing */
+    padding: 24px 20px !important; /* Increased padding */
+    border-radius: 24px;
+  }
+
+  .status-item {
+    gap: 16px !important; /* More gap between label and value */
+    margin-bottom: 16px;
+  }
+
+  .status-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .status-label {
+    padding: 14px 16px !important; /* Increased padding */
+    font-size: 16px !important; /* Larger text */
+    border-radius: 14px;
+  }
+
+  .status-value {
+    padding: 14px 16px !important; /* Increased padding */
+    font-size: 16px !important; /* Larger text */
+    border-radius: 14px;
+  }
+}
